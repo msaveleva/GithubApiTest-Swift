@@ -20,7 +20,11 @@ class ViewController: UIViewController {
         configureUI()
     }
 
-
+    @IBAction func reloadContent(_ sender: Any) {
+    }
+    
+    @IBAction func addNewUser(_ sender: Any) {
+    }
 }
 
 
