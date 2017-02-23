@@ -13,6 +13,8 @@
 		CF30B60D1E5F4AF20087A989 /* GithubApiTest_Swift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF30B60B1E5F4AF20087A989 /* GithubApiTest_Swift.xcdatamodeld */; };
 		CF30B60F1E5F4AF20087A989 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF30B60E1E5F4AF20087A989 /* Assets.xcassets */; };
 		CF30B6121E5F4AF20087A989 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF30B6101E5F4AF20087A989 /* LaunchScreen.storyboard */; };
+		CF30B6211E5F4D8C0087A989 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF30B6201E5F4D8C0087A989 /* MainTableViewCell.swift */; };
+		CF30B6231E5F4DAA0087A989 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF30B6221E5F4DAA0087A989 /* MainTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CF30B60E1E5F4AF20087A989 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF30B6111E5F4AF20087A989 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF30B6131E5F4AF20087A989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF30B6201E5F4D8C0087A989 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		CF30B6221E5F4DAA0087A989 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +68,6 @@
 				CF30B61A1E5F4B020087A989 /* Parsers */,
 				CF30B6191E5F4AFE0087A989 /* Model */,
 				CF30B6041E5F4AF20087A989 /* AppDelegate.swift */,
-				CF30B6061E5F4AF20087A989 /* ViewController.swift */,
 				CF30B6081E5F4AF20087A989 /* Main.storyboard */,
 				CF30B60E1E5F4AF20087A989 /* Assets.xcassets */,
 				CF30B6101E5F4AF20087A989 /* LaunchScreen.storyboard */,
@@ -112,6 +115,7 @@
 		CF30B61E1E5F4B190087A989 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CF30B6061E5F4AF20087A989 /* ViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -119,6 +123,8 @@
 		CF30B61F1E5F4B1F0087A989 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				CF30B6201E5F4D8C0087A989 /* MainTableViewCell.swift */,
+				CF30B6221E5F4DAA0087A989 /* MainTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -185,6 +191,7 @@
 			files = (
 				CF30B6121E5F4AF20087A989 /* LaunchScreen.storyboard in Resources */,
 				CF30B60F1E5F4AF20087A989 /* Assets.xcassets in Resources */,
+				CF30B6231E5F4DAA0087A989 /* MainTableViewCell.xib in Resources */,
 				CF30B60A1E5F4AF20087A989 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +205,7 @@
 			files = (
 				CF30B60D1E5F4AF20087A989 /* GithubApiTest_Swift.xcdatamodeld in Sources */,
 				CF30B6071E5F4AF20087A989 /* ViewController.swift in Sources */,
+				CF30B6211E5F4D8C0087A989 /* MainTableViewCell.swift in Sources */,
 				CF30B6051E5F4AF20087A989 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
