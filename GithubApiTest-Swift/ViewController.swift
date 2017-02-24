@@ -23,16 +23,8 @@ class ViewController: UIViewController {
         configureUI()
     }
 
-    func test() {
-        DataManager.sharedInstance.fetchReposFor(userName: "msaveleva") { [weak self] (result) in
-            self?.repos = result
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }
-    }
-
     @IBAction func reloadContent(_ sender: Any) {
+        
     }
     
     @IBAction func addNewUser(_ sender: Any) {
@@ -66,10 +58,10 @@ extension ViewController {
 
         let okAction = UIAlertAction(title: "OK", style: .default) { [weak self, weak alertController] (action) in
             let nameTextField = alertController?.textFields?.first
-            let name = nameTextField?.text
+            self?.userName = nameTextField?.text
 
-            if let userName = name {
-                self?.loadReposFor(userName: userName)
+            if let name = self?.userName {
+                self?.loadReposFor(userName: name)
             } else {
                 print("incorrect name")
             }
