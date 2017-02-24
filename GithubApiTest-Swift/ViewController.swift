@@ -15,12 +15,12 @@ class ViewController: UIViewController {
     @IBOutlet fileprivate var tableView: UITableView!
 
     fileprivate var repos = [Repo]()
+    fileprivate var userName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureUI()
-        test()
     }
 
     func test() {
@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addNewUser(_ sender: Any) {
+        showUserNameAlert()
     }
 }
 
@@ -48,6 +49,47 @@ extension ViewController {
 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 150.0
+    }
+
+    fileprivate func showUserNameAlert() {
+        let alert = createNameAlert()
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    private func createNameAlert() -> UIAlertController {
+        let alertController = UIAlertController(title: "Enter user name",
+                                                message: "Enter user name to display all of this user's repos.",
+                                                preferredStyle: .alert)
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+
+        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self, weak alertController] (action) in
+            let nameTextField = alertController?.textFields?.first
+            let name = nameTextField?.text
+
+            if let userName = name {
+                self?.loadReposFor(userName: userName)
+            } else {
+                print("incorrect name")
+            }
+        }
+        alertController.addAction(okAction)
+
+        alertController.addTextField { (textField) in
+            textField.placeholder = "User name"
+        }
+
+        return alertController
+    }
+
+    private func loadReposFor(userName: String) {
+        DataManager.sharedInstance.fetchReposFor(userName: userName, completion: { [weak self] (results) in
+            self?.repos = results
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        })
     }
 
 }
