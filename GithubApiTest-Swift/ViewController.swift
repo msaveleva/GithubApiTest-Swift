@@ -18,6 +18,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         configureUI()
+        test()
+    }
+
+    func test() {
+        DataManager.sharedInstance.fetchReposFor(userName: "msaveleva") { (result) in
+
+        }
     }
 
     @IBAction func reloadContent(_ sender: Any) {

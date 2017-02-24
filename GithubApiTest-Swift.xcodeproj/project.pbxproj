@@ -15,6 +15,11 @@
 		CF30B6121E5F4AF20087A989 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF30B6101E5F4AF20087A989 /* LaunchScreen.storyboard */; };
 		CF30B6211E5F4D8C0087A989 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF30B6201E5F4D8C0087A989 /* MainTableViewCell.swift */; };
 		CF30B6231E5F4DAA0087A989 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF30B6221E5F4DAA0087A989 /* MainTableViewCell.xib */; };
+		CF30B6251E5FFA740087A989 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF30B6241E5FFA740087A989 /* DataManager.swift */; };
+		CF30B6271E5FFAE80087A989 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF30B6261E5FFAE80087A989 /* Repo.swift */; };
+		CF30B6291E5FFB480087A989 /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF30B6281E5FFB480087A989 /* ConnectionService.swift */; };
+		CF30B62B1E6002CA0087A989 /* RepoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF30B62A1E6002CA0087A989 /* RepoParser.swift */; };
+		CF30B62D1E6003390087A989 /* ReposRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF30B62C1E6003390087A989 /* ReposRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		CF30B6131E5F4AF20087A989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF30B6201E5F4D8C0087A989 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		CF30B6221E5F4DAA0087A989 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		CF30B6241E5FFA740087A989 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		CF30B6261E5FFAE80087A989 /* Repo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		CF30B6281E5FFB480087A989 /* ConnectionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
+		CF30B62A1E6002CA0087A989 /* RepoParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoParser.swift; sourceTree = "<group>"; };
+		CF30B62C1E6003390087A989 /* ReposRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +90,7 @@
 		CF30B6191E5F4AFE0087A989 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CF30B6261E5FFAE80087A989 /* Repo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -87,6 +98,7 @@
 		CF30B61A1E5F4B020087A989 /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
+				CF30B62A1E6002CA0087A989 /* RepoParser.swift */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -94,6 +106,7 @@
 		CF30B61B1E5F4B090087A989 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				CF30B62C1E6003390087A989 /* ReposRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -101,6 +114,7 @@
 		CF30B61C1E5F4B0E0087A989 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CF30B6281E5FFB480087A989 /* ConnectionService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -108,6 +122,7 @@
 		CF30B61D1E5F4B130087A989 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				CF30B6241E5FFA740087A989 /* DataManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -203,9 +218,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF30B6291E5FFB480087A989 /* ConnectionService.swift in Sources */,
 				CF30B60D1E5F4AF20087A989 /* GithubApiTest_Swift.xcdatamodeld in Sources */,
+				CF30B6251E5FFA740087A989 /* DataManager.swift in Sources */,
 				CF30B6071E5F4AF20087A989 /* ViewController.swift in Sources */,
+				CF30B62D1E6003390087A989 /* ReposRequest.swift in Sources */,
+				CF30B6271E5FFAE80087A989 /* Repo.swift in Sources */,
 				CF30B6211E5F4D8C0087A989 /* MainTableViewCell.swift in Sources */,
+				CF30B62B1E6002CA0087A989 /* RepoParser.swift in Sources */,
 				CF30B6051E5F4AF20087A989 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +390,7 @@
 				CF30B6181E5F4AF20087A989 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
