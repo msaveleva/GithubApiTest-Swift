@@ -13,6 +13,8 @@ let kMainCellIdentifier = "MainCellIdentifier"
 class ViewController: UIViewController {
 
     @IBOutlet fileprivate var tableView: UITableView!
+
+    fileprivate var repos = [Repo]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +24,11 @@ class ViewController: UIViewController {
     }
 
     func test() {
-        DataManager.sharedInstance.fetchReposFor(userName: "msaveleva") { (result) in
-
+        DataManager.sharedInstance.fetchReposFor(userName: "msaveleva") { [weak self] (result) in
+            self?.repos = result
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
         }
     }
 
@@ -38,7 +43,7 @@ class ViewController: UIViewController {
 extension ViewController {
 
     fileprivate func configureUI() {
-        let cellNib = UINib(nibName: "MainTableViewCell", bundle: Bundle.main) //TODO: change string
+        let cellNib = UINib(nibName: String(describing: MainTableViewCell.self), bundle: Bundle.main)
         tableView.register(cellNib, forCellReuseIdentifier: kMainCellIdentifier)
 
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -51,16 +56,19 @@ extension ViewController {
 extension ViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1; //TODO: change
+        return repos.count;
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kMainCellIdentifier)
-
-        //TODO: configure cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: kMainCellIdentifier) as? MainTableViewCell
 
         guard let tableViewCell = cell else {
             return UITableViewCell()
+        }
+
+        if repos.count - 1 >= indexPath.row {
+            let repo = repos[indexPath.row]
+            cell?.configureCell(repoName: repo.title, repoDescription: repo.descriptionMessage)
         }
 
         return tableViewCell;

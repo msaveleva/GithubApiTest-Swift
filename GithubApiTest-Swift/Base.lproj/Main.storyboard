@@ -26,8 +26,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="e74-qG-fur"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="LAF-4q-b6e"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Ulo-KO-DM1"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="NdE-V3-pRh"/>
                                 </connections>
                             </tableView>
                         </subviews>

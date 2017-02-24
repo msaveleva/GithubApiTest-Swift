@@ -45,7 +45,7 @@
                 <outlet property="repoDescriptionLabel" destination="7zH-8v-yHH" id="VbP-kU-lHQ"/>
                 <outlet property="repoNameLabel" destination="8eN-YH-Mdc" id="7fy-ki-A6c"/>
             </connections>
-            <point key="canvasLocation" x="-268.5" y="-97"/>
+            <point key="canvasLocation" x="-320" y="-126"/>
         </tableViewCell>
     </objects>
 </document>

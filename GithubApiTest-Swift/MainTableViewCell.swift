@@ -14,9 +14,12 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet private var repoNameLabel: UILabel!
     @IBOutlet private var repoDescriptionLabel: UILabel!
 
-    func configureCell(repoName: String, repoDescription: String) {
+    func configureCell(repoName: String, repoDescription: String?) {
         repoNameLabel.text = repoName
-        repoDescriptionLabel.text = repoDescription
+
+        if let repoDescr = repoDescription {
+            repoDescriptionLabel.text = repoDescr
+        }
     }
     
 }
