@@ -15,12 +15,20 @@ class DataManager {
     private let connectionService = ConnectionService()
     private let repoParser = RepoParser()
 
-    public func fetchReposFor(userName: String, completion: @escaping (_ repos: Array<Repo>) -> Void) {
+    public func fetchReposFor(userName: String?, completion: @escaping (_ repos: Array<Repo>) -> Void) {
         var result = [Repo]()
 
-        let request = ReposRequest.createWithUserName(name: userName)
+        guard let name = userName else {
+            completion(result)
+            print("incorrect username")
+
+            return
+        }
+
+        let request = ReposRequest.createWithUserName(name: name)
         guard let reposRequest = request else {
             completion(result)
+
             return
         }
 

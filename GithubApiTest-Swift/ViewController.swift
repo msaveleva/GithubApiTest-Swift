@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func reloadContent(_ sender: Any) {
-        
+        loadReposFor(userName: userName)
     }
     
     @IBAction func addNewUser(_ sender: Any) {
@@ -48,6 +48,15 @@ extension ViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
+    fileprivate func loadReposFor(userName: String?) {
+        DataManager.sharedInstance.fetchReposFor(userName: userName, completion: { [weak self] (results) in
+            self?.repos = results
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        })
+    }
+
     private func createNameAlert() -> UIAlertController {
         let alertController = UIAlertController(title: "Enter user name",
                                                 message: "Enter user name to display all of this user's repos.",
@@ -60,11 +69,7 @@ extension ViewController {
             let nameTextField = alertController?.textFields?.first
             self?.userName = nameTextField?.text
 
-            if let name = self?.userName {
-                self?.loadReposFor(userName: name)
-            } else {
-                print("incorrect name")
-            }
+            self?.loadReposFor(userName: self?.userName)
         }
         alertController.addAction(okAction)
 
@@ -73,15 +78,6 @@ extension ViewController {
         }
 
         return alertController
-    }
-
-    private func loadReposFor(userName: String) {
-        DataManager.sharedInstance.fetchReposFor(userName: userName, completion: { [weak self] (results) in
-            self?.repos = results
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        })
     }
 
 }
